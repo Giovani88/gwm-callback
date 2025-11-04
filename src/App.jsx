@@ -7,9 +7,8 @@ import NotFound from './pages/NotFound';
 function App() {
   return (
     <Routes>
-      <Route path="/authorize" element={ <Authorize />} />
-      <Route path="/callback" element={ <Callback />} />
-      <Route path="/*" element={ <NotFound />} />
+      {/* <Route path="/authorize" element={ <Authorize />} /> */}
+      <Route path="/callback" element={ <Callback />} />      
     </Routes>
   )
 }
