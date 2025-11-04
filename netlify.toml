@@ -1,0 +1,8 @@
+// Source - https://stackoverflow.com/questions/58065603/netlify-renders-404-on-page-refresh-using-react-and-react-router
+// Posted by Muho
+// Retrieved 4/11/2025, License - CC-BY-SA 4.0
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
