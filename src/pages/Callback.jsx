@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-
+import logo from '../assets/intelisis.png'
 export function Callback() {
+  console.log('callback-url')
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const authCode = params.get("code");
@@ -12,7 +13,7 @@ export function Callback() {
 
   async function getToken(authCode) {
 
-    const tenantId = import.meta.env.VITE_TENANTID;    
+    const tenantId = import.meta.env.VITE_TENANTID;
     const clientId = import.meta.env.VITE_CLIENTID;
     const redirectUri = import.meta.env.VITE_REDIRECTURI;
     const baseUrl = import.meta.env.VITE_URLBASE
@@ -31,17 +32,18 @@ export function Callback() {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: params
-      });  
+      });
       const data = await response.json();
-      const {access_token:tokenGWM, refresh_token:refreshGWM} = data
-      localStorage.setItem("tokenGWM",tokenGWM)
-      localStorage.setItem("refreshGWM",refreshGWM)                
-      
+      const { access_token: tokenGWM, refresh_token: refreshGWM } = data
+      localStorage.setItem("tokenGWM", tokenGWM)
+      localStorage.setItem("refreshGWM", refreshGWM)
+
     } catch (error) {
-      console.error(error);      
-    }    
+      console.error(error);
+    }
   }
 
-  return (<>    
-  </>);
+  return (<div>
+    <img src={logo}  width="25%" alt="Logo" />
+  </div>);
 }
