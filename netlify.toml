@@ -3,6 +3,6 @@
 // Retrieved 4/11/2025, License - CC-BY-SA 4.0
 
 [[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
+from = "/*"
+to = "/"
+status = 200
